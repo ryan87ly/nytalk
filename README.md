@@ -11,10 +11,8 @@ git clone http://gitlab.ullink.lan/rluo/nytalk
 ### Setup firebase environment
 #### Install npm if you haven't
 ```
-npm install && npm install --dev
-npm run installtools`
+npm install && npm install --only=dev
 ```
-This may take a little while
 
 #### Intall firebase tools: 
 ```
@@ -34,4 +32,5 @@ firebase deploy
 ```
 
 ### Run
-Nothing needs to be done by you as it's deployed and running in cloud server! Just go to https://nytalk-13636.firebaseapp.com and check out the result, have fun! :D
+Nothing needs to be done by you as it's deployed and running in cloud server! Just go to https://nytalk-13636.firebaseapp.com and check out the result.
+Have fun! :D
