@@ -9,20 +9,20 @@ git clone http://gitlab.ullink.lan/rluo/nytalk
 ```
 
 ### Setup firebase environment
-1.Install npm if you haven't
+#### Install npm if you haven't
 ```
 npm install && npm install --dev
 npm run installtools`
 ```
 This may take a little while
 
-2.Intall firebase tools: 
+#### Intall firebase tools: 
 ```
 npm install -g firebase-tools
 ```
 After this, you can use `firebase` in command line directly
 
-3.Login firebase in command line
+#### Login firebase in command line
 ```
 firebase login
 ```
