@@ -19,21 +19,23 @@ let server = app.listen(config.port, function () {
 });
 
 app.get('/nytalk', function(req, res){
-    let host = req.headers.host
-    log(`nytalk url: ${req.url}`);
-    let redirectUrl = `${host}/nytalkcallback`;
-    let params = {
-        client_id : config.clientid,
-        response_type : 'code',
-        scope : 'email',
-        state : 'STATE',
-        redirect_uri : redirectUrl
-    }
-    let authUrl = `${config.authPath}?${querystring.stringify(params)}`;
-    res.redirect(authUrl);
-});
+    if (!req.query.code) {
+        let host = req.headers.host;
+        log(`nytalk url: ${req.url}`);
+        log(`nytalk host: ${host}`);
+        let redirectUrl = `http://${host}/nytalk`;
+        let params = {
+            response_type : 'code',
+            redirect_uri : redirectUrl,
+            scope : 'email',
+            state : 'haha',
+            client_id : config.clientid
+        }
+        let authUrl = `${config.authPath}?${querystring.stringify(params)}`;
+        log(`redirect url ${redirectUrl}`)
+        res.redirect(authUrl);
+    } else {
+        res.send('welcome to nytalk');    
+    } 
 
-app.get('/nytalkcallback', function(req, res) {
-    log(`nytalkcallback url: ${req.url}`);
-    res.send('welcome to nytalk');
 });

@@ -1,4 +1,4 @@
-const nyfixUrl = 'https://login-sandbox-dev.nyfix.net/sentrygw/api/';
+const nyfixUrl = 'https://login-sandbox.nyfix.com/sentrygw/api/';
 
 module.exports = {
     "port" : 3000,
